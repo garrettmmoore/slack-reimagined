@@ -33,7 +33,7 @@ function Sidebar() {
     <div className='sidebar'>
       <div className='sidebar-header'>
         <div className='sidebar-info'>
-          <h2>Clever Programmer</h2>
+          <h2>Slack Reimagined</h2>
           <h3>
             <FiberManualRecordIcon />
             Garrett Moore
@@ -51,9 +51,10 @@ function Sidebar() {
       <SidebarOption Icon={ExpandLessIcon} title='Show less' />
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title='Channels' />
-      <SidebarOption Icon={AddIcon} title='Add' />
+      <hr />
+      <SidebarOption Icon={AddIcon} title='Add' addChannelOption />
       {channels.map((channel) => (
-        <SidebarOption key={channel.id} title={channel.name} />
+        <SidebarOption title={channel.name} id={channel.id} key={channel.id} />
       ))}
     </div>
   );
