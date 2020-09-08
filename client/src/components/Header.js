@@ -1,6 +1,9 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
-import { MdAccessTime, MdHelpOutline, MdSearch } from 'react-icons/md';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import SearchIcon from '@material-ui/icons/Search';
+
 import './Header.css';
 
 function Header() {
@@ -8,14 +11,14 @@ function Header() {
     <div className='header'>
       <div className='header-left'>
         <Avatar className='header_avatar' alt={''} src={'  '}></Avatar>
-        <MdAccessTime className='MuiSvgIcon-root' />
+        <AccessTimeIcon />
       </div>
       <div className='header-search'>
-        <MdSearch />
+        <SearchIcon />
         <input placeholder='Search' />
       </div>
       <div className='header-right'>
-        <MdHelpOutline className='MuiSvgIcon-root' />
+        <HelpOutlineIcon />
       </div>
     </div>
   );
