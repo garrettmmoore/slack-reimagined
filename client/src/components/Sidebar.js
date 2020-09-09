@@ -14,8 +14,10 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import './Sidebar.css';
 import SidebarOption from './SidebarOption';
 import db from '../firebase';
+import { useStateValue } from '../StateProvider';
 
 function Sidebar() {
+  const [{ user }] = useStateValue();
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ function Sidebar() {
           <h2>Slack Reimagined</h2>
           <h3>
             <FiberManualRecordIcon />
-            Garrett Moore
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
