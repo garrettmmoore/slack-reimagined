@@ -19,6 +19,8 @@ function ChatInput({ channelName, channelId }) {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
+
+    setInput('');
   };
 
   return (
