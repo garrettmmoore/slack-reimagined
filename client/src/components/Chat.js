@@ -11,6 +11,7 @@ function Chat() {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetaills] = useState(null);
   const [roomMessages, setRoomMessages] = useState([]);
+
   useEffect(() => {
     if (roomId) {
       db.collection('rooms')
@@ -24,7 +25,6 @@ function Chat() {
           setRoomMessages(snapshot.docs.map((doc) => doc.data()))
         );
     }
-    console.log('roomMessages', roomMessages);
   }, [roomId]);
 
   return (
