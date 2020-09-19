@@ -44,10 +44,10 @@ function Sidebar() {
         <CreateIcon />
       </div>
       <SidebarOption Icon={InsertCommentIcon} title='Threads' />
-      <SidebarOption Icon={InboxIcon} title='Mentions & reactions' />
+      <SidebarOption Icon={InboxIcon} title='Mentions' />
       <SidebarOption Icon={DraftsIcon} title='Saved items' />
       <SidebarOption Icon={BookmarkBorderIcon} title='Channel browser' />
-      <SidebarOption Icon={PeopleAltIcon} title='People & user groups' />
+      <SidebarOption Icon={PeopleAltIcon} title='People' />
       <SidebarOption Icon={AppsIcon} title='Apps' />
       <SidebarOption Icon={FileCopyIcon} title='File browser' />
       <SidebarOption Icon={ExpandLessIcon} title='Show less' />
