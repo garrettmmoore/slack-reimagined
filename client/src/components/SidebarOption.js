@@ -5,6 +5,7 @@ import db from '../firebase';
 
 function SidebarOption({ Icon, title, id, addChannelOption }) {
   const history = useHistory();
+
   const selectChannel = () => {
     if (id) {
       history.push(`/room/${id}`);
