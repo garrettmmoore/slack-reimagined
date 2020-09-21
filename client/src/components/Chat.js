@@ -16,33 +16,33 @@ function Chat() {
     if (roomId) {
       db.collection('rooms')
         .doc(roomId)
-        .onSnapshot((snapshot) => setRoomDetaills(snapshot.data()));
+        .onSnapshot(snapshot => setRoomDetaills(snapshot.data()));
       db.collection('rooms')
         .doc(roomId)
         .collection('messages')
         .orderBy('timestamp', 'asc')
-        .onSnapshot((snapshot) =>
-          setRoomMessages(snapshot.docs.map((doc) => doc.data()))
+        .onSnapshot(snapshot =>
+          setRoomMessages(snapshot.docs.map(doc => doc.data()))
         );
     }
   }, [roomId]);
 
   return (
-    <div className='chat'>
-      <div className='chat-header'>
-        <div className='chat-headerLeft'>
-          <h4 className='chat-channelName'>
+    <div className="chat">
+      <div className="chat-header">
+        <div className="chat-headerLeft">
+          <h4 className="chat-channelName">
             <strong># {roomDetails?.name}</strong>
             <StarBorderOutlinedIcon />
           </h4>
         </div>
-        <div className='chat-headerRight'>
+        <div className="chat-headerRight">
           <p>
             <InfoOutlinedIcon /> Details
           </p>
         </div>
       </div>
-      <div className='chat-body'>
+      <div className="chat-body">
         {roomMessages.map(({ message, timestamp, user, userImage }, i) => (
           <Message
             key={i}

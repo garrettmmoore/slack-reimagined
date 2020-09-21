@@ -18,22 +18,22 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
     const channelName = prompt('Please enter the channel name');
     if (channelName) {
       db.collection('rooms').add({
-        name: channelName,
+        name: channelName
       });
     }
   };
 
   return (
     <div
-      className='sidebarOption'
+      className="sidebarOption"
       onClick={addChannelOption ? addChannel : selectChannel}
     >
-      {Icon && <Icon className='sidebarOption-icon' />}
+      {Icon && <Icon className="sidebarOption-icon" />}
       {Icon ? (
         <h3>{title}</h3>
       ) : (
-        <h3 className='sidebarOption-channel'>
-          <span className='sidebarOption-hash'>#</span> {title}
+        <h3 className="sidebarOption-channel">
+          <span className="sidebarOption-hash">#</span> {title}
         </h3>
       )}
     </div>

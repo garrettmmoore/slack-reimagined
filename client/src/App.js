@@ -10,20 +10,20 @@ import './App.css';
 function App() {
   const [{ user }, dispatch] = useStateValue();
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         {!user ? (
           <Login />
         ) : (
           <>
             <Header />
-            <div className='app-body'>
+            <div className="app-body">
               <Sidebar />
               <Switch>
-                <Route path='/room/:roomId'>
+                <Route path="/room/:roomId">
                   <Chat />
                 </Route>
-                <Route path='/'>
+                <Route path="/">
                   <h1>Welcome</h1>
                 </Route>
               </Switch>
