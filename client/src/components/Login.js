@@ -11,25 +11,25 @@ function Login() {
   const signIn = () => {
     auth
       .signInWithPopup(provider)
-      .then((result) => {
+      .then(result => {
         console.log(result);
         // push the user into the data layer
         dispatch({
           type: actionTypes.SET_USER,
-          user: result.user,
+          user: result.user
         });
       })
-      .catch((error) => {
+      .catch(error => {
         alert(error.message);
       });
   };
 
   return (
-    <div className='login'>
-      <div className='login-container'>
+    <div className="login">
+      <div className="login-container">
         <img
-          src='https://i.picsum.photos/id/389/200/200.jpg?hmac=wMpkVNteeBzuxyzbDb9fXZfr-aCfp8scZWMabXtk7qU'
-          alt=''
+          src="https://i.picsum.photos/id/389/200/200.jpg?hmac=wMpkVNteeBzuxyzbDb9fXZfr-aCfp8scZWMabXtk7qU"
+          alt=""
         />
         <h1>Sign in to Reimagined</h1>
         <p>reimagined.slack.com</p>

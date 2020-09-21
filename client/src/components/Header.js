@@ -10,20 +10,20 @@ function Header() {
   const [{ user }] = useStateValue();
 
   return (
-    <div className='header'>
-      <div className='header-left'>
+    <div className="header">
+      <div className="header-left">
         <Avatar
-          className='header_avatar'
+          className="header_avatar"
           alt={user?.displayName}
           src={user?.photoURL}
         ></Avatar>
         <AccessTimeIcon />
       </div>
-      <div className='header-search'>
+      <div className="header-search">
         <SearchIcon />
-        <input placeholder='Search' />
+        <input placeholder="Search" />
       </div>
-      <div className='header-right'>
+      <div className="header-right">
         <HelpOutlineIcon />
       </div>
     </div>

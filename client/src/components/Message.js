@@ -3,12 +3,12 @@ import './Message.css';
 
 function Message({ message, timestamp, user, userImage }) {
   return (
-    <div className='message'>
-      <img src={userImage} alt='' />
-      <div className='message-info'>
+    <div className="message">
+      <img src={userImage} alt="" />
+      <div className="message-info">
         <h4>
           {user}{' '}
-          <span className='message-timestamp'>
+          <span className="message-timestamp">
             {new Date(timestamp?.toDate()).toUTCString()}
           </span>
         </h4>

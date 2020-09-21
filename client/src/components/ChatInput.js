@@ -8,7 +8,7 @@ function ChatInput({ channelName, channelId }) {
   const [input, setInput] = useState('');
   const [{ user }] = useStateValue();
 
-  const sendMessage = (e) => {
+  const sendMessage = e => {
     e.preventDefault();
 
     if (channelId) {
@@ -16,7 +16,7 @@ function ChatInput({ channelName, channelId }) {
         message: input,
         user: user.displayName,
         userImage: user.photoURL,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
       });
     }
 
@@ -24,14 +24,14 @@ function ChatInput({ channelName, channelId }) {
   };
 
   return (
-    <div className='chatInput'>
+    <div className="chatInput">
       <form>
         <input
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={e => setInput(e.target.value)}
           placeholder={`Message #${channelName?.toLowerCase()}`}
         />
-        <button type='submit' onClick={sendMessage}>
+        <button type="submit" onClick={sendMessage}>
           SEND
         </button>
       </form>
