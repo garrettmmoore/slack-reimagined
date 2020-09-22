@@ -31,11 +31,10 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-info">
-          <Button></Button>
           <h2>Slack Reimagined</h2>
           <h3>
             <FiberManualRecordIcon />
-            {user?.displayName}
+            {user ? user.displayName : 'Guest'}
           </h3>
         </div>
         <CreateIcon />

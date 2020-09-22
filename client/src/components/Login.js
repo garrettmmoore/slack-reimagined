@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import './Login.css';
-import { auth, provider } from '../firebase';
+import { auth, googleProvider } from '../firebase';
 import { useStateValue } from '../StateProvider';
 import { actionTypes } from '../reducer';
 
@@ -10,9 +10,18 @@ function Login() {
 
   const signIn = () => {
     auth
-      .signInWithPopup(provider)
+      .signInWithRedirect(googleProvider)
+      .then()
+      .catch(error => {
+        console.log(error);
+        alert(error?.message);
+      });
+  };
+
+  const signInAnonymous = () => {
+    auth
+      .signInAnonymously()
       .then(result => {
-        console.log(result);
         // push the user into the data layer
         dispatch({
           type: actionTypes.SET_USER,
@@ -20,7 +29,8 @@ function Login() {
         });
       })
       .catch(error => {
-        alert(error.message);
+        console.log(error);
+        alert(error?.message);
       });
   };
 
@@ -34,9 +44,9 @@ function Login() {
         <h1>Sign in to Reimagined</h1>
         <p>reimagined.slack.com</p>
         <Button onClick={signIn}>Sign in with Google</Button>
+        <Button onClick={signInAnonymous}>Sign in as Guest</Button>
       </div>
     </div>
   );
 }
-
 export default Login;
