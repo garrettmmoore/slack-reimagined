@@ -40,7 +40,7 @@
 }
 
 .header-search > input:focus {
-  outline: auto;
+  outline: none;
 }
 
 .header-right {

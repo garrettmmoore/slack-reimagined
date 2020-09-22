@@ -7,7 +7,7 @@
 .message > img {
   height: 30px;
   width: 30px;
-  border-radius: 999px;
+  border-radius: 4px;
   object-fit: contain;
 }
 

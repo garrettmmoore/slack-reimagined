@@ -13,10 +13,11 @@ function Header() {
     <div className="header">
       <div className="header-left">
         <Avatar
+          variant={'rounded'}
           className="header_avatar"
           alt={user?.displayName}
           src={user?.photoURL}
-        ></Avatar>
+        />
         <AccessTimeIcon />
       </div>
       <div className="header-search">
